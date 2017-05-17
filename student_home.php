@@ -30,7 +30,7 @@ if (isset($_POST['signout'])) {
     <script type='text/javascript' src='js/functions.js'> </script>
                 </head>
     
-  <body class='w3-white'>
+  <body class='w3-blue-grey'>
         <!-- Sidebar start (Large Screens) -->
 <div class='w3-sidebar w3-bar-block w3-dark-grey w3-card-2 w3-animate-left w3-hide-small w3-mobile' style='display:none' id='mySidebar'>
 <div class='w3-container w3-white'>
