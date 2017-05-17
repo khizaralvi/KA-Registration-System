@@ -23,7 +23,7 @@ $sql = "SELECT DISTINCT(semester.sem_name), transcript.semester_id
  FROM transcript
  INNER JOIN semester ON transcript.semester_id = semester.semester_id
  WHERE transcript.student_id = " . $_SESSION['userid'] .
- " ORDER BY transcript.semester_id DESC";
+ " ORDER BY transcript.semester_id";
 
  $conn = mysqlConnect();
 
@@ -183,15 +183,15 @@ foreach ($semesters as $semester) {
 }
 //mysqli_close($conn);
 }
-else {
-    $transcript = "";
-}
+//else {
+   // $transcript = "";
+//}
 
 /**** For future enrolled semesters ****/
  $sql = "SELECT DISTINCT(semester.sem_name), section.semester_id from enrollment
  INNER JOIN section ON enrollment.crn = section.crn
  INNER JOIN semester ON section.semester_id = semester.semester_id
- where section.semester_id  > (SELECT max(transcript.semester_id) FROM transcript)
+ where section.semester_id  > (SELECT max(transcript.semester_id) FROM transcript) OR section.semester_id NOT IN (SELECT transcript.semester_id FROM transcript)
  AND enrollment.student_id = " . $_SESSION['userid'] .
  " ORDER BY section.semester_id";
 
@@ -204,17 +204,17 @@ else {
    }
 }
 if (sizeof($enrolledSemesters) > 0) {
-    $sql = "SELECT enrollment.crn, section.semester_id, semester.sem_name, course.course_category, course.course_name, course.credits from enrollment
+    foreach($enrolledSemesters as $semester) {
+        $sql = "SELECT enrollment.crn, section.semester_id, semester.sem_name, course.course_category, course.course_name, course.credits from enrollment
             INNER JOIN section ON enrollment.crn = section.crn
             INNER JOIN course ON section.course_id = course.course_id
             INNER JOIN semester ON section.semester_id = semester.semester_id
-            WHERE section.semester_id  > (SELECT max(transcript.semester_id) FROM transcript)
+            WHERE semester.sem_name = '$semester'
             AND enrollment.student_id = " . $_SESSION['userid'];
 
-    foreach($enrolledSemesters as $semester) {
             if ($result = mysqli_query($conn, $sql)) {
             $transcript .= "<div class='w3-container w3-responsive'>
-                    <h4 w3-opacity class='w3-blue-grey w3-padding-small'><b>$semester</b></h4>
+                    <h4 w3-opacity class='w3-blue-grey w3-padding-small'><b>$semester</b> (In Progress) </h4>
                     <div class='w3-col l2 s3 w3-left'>
                         <h5 class='w3-grey'><b>Course</b></h5>
                     </div>
@@ -223,7 +223,8 @@ if (sizeof($enrolledSemesters) > 0) {
                     </div>
                     <div class='w3-col l2 s3 w3-left'>
                         <h5 class='w3-grey'><b>Hours</b></h5>
-                    </div>";
+                    </div>
+                       ";
                 while ($row = mysqli_fetch_array($result)) {
                     $transcript .= "<div class='w3-row'>
                         <div class='w3-col l2 s3 w3-left'>
@@ -237,6 +238,7 @@ if (sizeof($enrolledSemesters) > 0) {
                         </div>
                     </div>";  
              }
+             $transcript .= "</div>";
         }
         else {
             echo "Failed " . mysqli_error($conn);

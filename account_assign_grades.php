@@ -90,7 +90,7 @@ if ($result = mysqli_query($conn, $sql)) {
            // <button class='w3-btn w3-ripple w3-deep-orange w3-round w3-padding-small' type = 'submit' name = 'drop_course' value = $row[1]>Drop</button>
             else {
                 $input = "<p class = 'w3-text-dark-grey'> <form action = '?' method = 'post'> 
-                <input type = 'text' name = 'grade'> 
+                <input type = 'text' name = 'grade' style = 'max-width: 80px'> 
                 <input class = 'w3-btn w3-blue-grey w3-round w3-padding-small' type = 'submit' name = 'assign_grade' value = 'Assign'> 
                 <input type = 'hidden' name = 'faculty' value = $row[12]>
                 <input type = 'hidden' name = 'crn' value = $row[1]>
@@ -110,7 +110,7 @@ if ($result = mysqli_query($conn, $sql)) {
          </div>";
    }
 }
-//$grades .= "</div>";
+$grades .= "</div>";
 }
 else {
 	echo "Failed " . mysqli_error($conn);
