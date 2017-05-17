@@ -1,0 +1,124 @@
+
+<!-- In PHP check cookies id not there redirect to main page or display not logged in -->
+<!doctype html>
+<html>
+	<head>
+		<title>BJS Registration</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+	</head>
+
+	<body class="w3-blue-grey">
+        <nav class="w3-bar w3-white">
+            <a class="w3-bar-item w3-button w3-hover-blue-grey" href="#">Student Dashboard</a>
+        <!-- Clear cookie and redirect to main page -->
+        <form action = "?" method = "post">                 <input type = "submit" name = "signout" class="w3-bar-item w3-button w3-right w3-red" value = "Sign Out">             </form>
+    </nav>
+    <!--  Search Form   -->
+        <div id="id02" class="w3-modal">
+    		<div class="w3-modal-content w3-card-8 w3-animate-zoom" style="max-width:600px">
+
+      			<div class="w3-center"><br>
+        			<span onclick="document.getElementById('id02').style.display='none'" class="w3-closebtn w3-hover-red w3-container w3-padding-8 w3-display-topright" title="Close Modal">&times;</span>
+
+      			</div>
+
+      		    <form class="w3-container" action="/action_page.php">
+        		  <div class="w3-section">
+          			<label style="color: #607d8b;"><b>Search By</b></label>
+                    <select class="w3-select" name="option" required>
+                        <option value="" disabled selected>Choose your option</option>
+                        <option value="1">Course Name</option>
+                        <option value="2">Course Number</option>
+                        <option value="3">CRN</option>
+                        <option value="4">Instructor</option>
+                    </select>
+                    <br><br>
+
+          			<label style="color: #607d8b;" ><b>Search</b></label>
+          			<input class="w3-input" type="text" placeholder="Enter Search" name="psw" required>
+
+        		  </div>
+      		    </form>
+
+      		    <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+        		  <button onclick="document.getElementById('id02').style.display='none'" type="button" class="w3-btn w3-red">Cancel</button>
+                    <button class="w3-btn w3-green w3-right" type="submit">Search</button>
+      		    </div>
+      	     </div>
+        </div>
+
+
+    <!-- Cards start -->
+    <div class="w3-row-padding w3-margin-top">
+        <!-- Start Card -->
+        <a onclick="document.getElementById('id02').style.display='block'" class="w3-quarter" style="text-decoration: none;" href="#">
+          <div class="w3-card-8 w3-center w3-white w3-hover-blue-grey">
+            <img src="img/file_icon.png"  alt="icon">
+            <div class="w3-container">
+              <h3>Search Classes</h3>
+            </div>
+          </div>
+        </a>
+        <!-- End Card -->
+        <!-- Start Card -->
+        <a class="w3-quarter" style="text-decoration: none;" href="#">
+          <div class="w3-card-8 w3-center w3-white w3-hover-blue-grey">
+            <img src="img/file_icon.png"  alt="icon">
+            <div class="w3-container">
+              <h3>Add Classes</h3>
+            </div>
+          </div>
+        </a>
+        <!-- End Card -->
+        <!-- Start Card -->
+        <a class="w3-quarter" style="text-decoration: none;" href="#">
+          <div class="w3-card-8 w3-center w3-white w3-hover-blue-grey">
+            <img src="img/file_icon.png"  alt="icon">
+            <div class="w3-container">
+              <h3>Drop Classes</h3>
+            </div>
+          </div>
+        </a>
+        <!-- End Card -->
+        <!-- Start Card -->
+        <a class="w3-quarter" style="text-decoration: none;" href="#">
+          <div class="w3-card-8 w3-center w3-white w3-hover-blue-grey">
+            <img src="img/file_icon.png"  alt="icon">
+            <div class="w3-container">
+              <h3>View All Classes</h3>
+            </div>
+          </div>
+        </a>
+        <!-- End Card -->
+    </div>
+    <!-- End of Icon buttons -->
+        <div class="w3-container">
+            <h1>Currently Registered Classes</h1>
+            <div class="w3-container w3-margin w3-round-large w3-white">
+
+                <div id="crn_section" class="w3-panel w3-blue-grey w3-round-large w3-margin w3-padding">
+                    <label>System Design |</label>
+                    <label>Monday & Wednesday, 1:00pm - 2:30pm |</label>
+                    <label>Instructor: Nasha Gupta </label>
+                </div>
+                <div id="crn_section" class="w3-panel w3-blue-grey w3-round-large w3-margin w3-padding">
+                    <label>System Design |</label>
+                    <label>Monday & Wednesday, 1:00pm - 2:30pm |</label>
+                    <label>Instructor: Nasha Gupta </label>
+                </div>
+                <div id="crn_section" class="w3-panel w3-blue-grey w3-round-large w3-margin w3-padding">
+                    <label>System Design |</label>
+                    <label>Monday & Wednesday, 1:00pm - 2:30pm |</label>
+                    <label>Instructor: Nasha Gupta </label>
+                </div>
+                <div id="crn_section" class="w3-panel w3-blue-grey w3-round-large w3-margin w3-padding">
+                    <label>System Design |</label>
+                    <label>Monday & Wednesday, 1:00pm - 2:30pm |</label>
+                    <label>Instructor: Nasha Gupta </label>
+                </div>
+
+            </div>
+        </div>
+	</body>
+</html>

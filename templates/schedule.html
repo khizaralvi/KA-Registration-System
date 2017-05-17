@@ -1,0 +1,98 @@
+<!-- In PHP check cookies id not there redirect to main page or display not logged in -->
+<!doctype html>
+<html>
+	<head>
+		<title>BJK Registration</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+        <script src="js/css.js" type="text/javascript"></script>
+	</head>
+
+	<body class="w3-blue-grey">
+        <nav class="w3-bar w3-white">
+            <a class="w3-bar-item w3-button w3-hover-blue-grey" href="/index.html">Home</a>
+            <a class="w3-bar-item w3-button w3-hover-blue-grey" href="#">Master Schedule</a>
+            <a class="w3-bar-item w3-button w3-hover-blue-grey" href="#">Master Catalog</a>
+        <!-- Clear cookie and redirect to main page -->
+        <button onclick="signout()" class="w3-bar-item w3-button w3-right w3-red">Sign Out</button>
+    </nav>
+        <div class="w3-container w3-margin"><h1>Schedule</h1></div>
+        <!-- Start of panels       -->
+        <div class="w3-container w3-margin">
+            <!-- panel start       -->
+            <button onclick="myFunction('mon')" class="w3-btn-block w3-left-align w3-white">
+                Monday
+            </button>
+            <div id="mon" class="w3-hide w3-container">
+                <div id="crn_section" class="w3-panel w3-blue-grey w3-round-large w3-margin w3-padding">
+                    <label>System Design |</label>
+                    <label>Monday & Wednesday, 1:00pm - 2:30pm |</label>
+                    <label>Location: NAB 0109 |</label>
+                    <label>Instructor: Nasha Gupta </label>
+                </div>
+            </div>
+            <!--  Panel end      -->
+        </div>
+        <div class="w3-container w3-margin">
+            <!-- panel start       -->
+            <button onclick="myFunction('tues')" class="w3-btn-block w3-left-align w3-white">
+                Tuesday
+            </button>
+            <div id="tues" class="w3-hide w3-container">
+                <div id="crn_section" class="w3-panel w3-blue-grey w3-round-large w3-margin w3-padding">
+                    <label>System Design |</label>
+                    <label>Monday & Wednesday, 1:00pm - 2:30pm |</label>
+                    <label>Location: NAB 0109 |</label>
+                    <label>Instructor: Nasha Gupta </label>
+                </div>
+            </div>
+            <!--  Panel end      -->
+        </div>
+        <div class="w3-container w3-margin">
+            <!-- panel start       -->
+            <button onclick="myFunction('wed')" class="w3-btn-block w3-left-align w3-white">
+                Wednesday
+            </button>
+            <div id="wed" class="w3-hide w3-container">
+                <div id="crn_section" class="w3-panel w3-blue-grey w3-round-large w3-margin w3-padding">
+                    <label>System Design |</label>
+                    <label>Monday & Wednesday, 1:00pm - 2:30pm |</label>
+                    <label>Location: NAB 0109 |</label>
+                    <label>Instructor: Nasha Gupta </label>
+                </div>
+            </div>
+            <!--  Panel end      -->
+        </div>
+        <div class="w3-container w3-margin">
+            <!-- panel start       -->
+            <button onclick="myFunction('thurs')" class="w3-btn-block w3-left-align w3-white">
+                Thursday
+            </button>
+            <div id="thurs" class="w3-hide w3-container">
+                <div id="crn_section" class="w3-panel w3-blue-grey w3-round-large w3-margin w3-padding">
+                    <label>System Design |</label>
+                    <label>Monday & Wednesday, 1:00pm - 2:30pm |</label>
+                    <label>Location: NAB 0109 |</label>
+                    <label>Instructor: Nasha Gupta </label>
+                </div>
+            </div>
+            <!--  Panel end      -->
+        </div>
+        <div class="w3-container w3-margin">
+            <!-- panel start       -->
+            <button onclick="myFunction('fri')" class="w3-btn-block w3-left-align w3-white">
+                Friday
+            </button>
+            <div id="fri" class="w3-hide w3-container">
+                <div id="crn_section" class="w3-panel w3-blue-grey w3-round-large w3-margin w3-padding">
+                    <label>System Design |</label>
+                    <label>Monday & Wednesday, 1:00pm - 2:30pm |</label>
+                    <label>Location: NAB 0109 |</label>
+                    <label>Instructor: Nasha Gupta </label>
+                </div>
+            </div>
+            <!--  Panel end      -->
+        </div>
+<!-- End of panels       -->
+	</body>
+</html>
