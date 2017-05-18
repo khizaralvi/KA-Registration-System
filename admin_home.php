@@ -12,18 +12,19 @@ if (isset($_POST['signout'])) {
   header("Location: logout_page.php");
 }
 
+
 htmlheader();
 ?>
 
  <!-- Background Image -->
 <div class="w3-display-container w3-center w3-wide image w3-grayscale-min">
   <div class="w3-display-bottommiddle w3-text-white w3-center w3-hide-small w3-hide-medium" style = "margin-bottom:40px">
-  <h2 class = "w3-xxxlarge">BKJ Registration System</h2>
-  <h2 class="w3-xxxlarge">Gupta University</h2>
+  <h2 class = "w3-xxxlarge">KA Registration System</h2>
+  <h2 class="w3-xxxlarge">Fortune University</h2>
  </div>
  <div class="w3-display-bottommiddle w3-text-white w3-center w3-hide-large" style = "margin-bottom:10px">
-    <h2 class="w3-xxlarge w3-hide-large">BKJ Registration System</h2>
-    <h2 class="w3-xxlarge w3-hide-large">Gupta University</h2>
+    <h2 class="w3-xxlarge w3-hide-large">KA Registration System</h2>
+    <h2 class="w3-xxlarge w3-hide-large">Fortune University</h2>
   </div>
 </div>
 

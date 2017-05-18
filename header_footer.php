@@ -71,14 +71,14 @@ else {
 
 
 <!-- Sidebar start (Small Screens)-->
-<div class='w3-sidebar w3-bar-block w3-dark-grey w3-card-2 w3-animate-left w3-hide-large w3-small w3-mobile' style='display:none' id='mySidebar2'>
-<div class = 'w3-row'> 
+<div class = 'menu'>
+<div class='w3-sidebar w3-bar-block w3-dark-grey w3-card-2 w3-small w3-hide-large app-menu' id='mySidebar2'>
+  <div class = 'w3-row'> 
  <div class='w3-half w3-white w3-container'>
-    <h4><i class='fa fa-user-circle' aria-hidden='true'></i> <b>"; echo $_SESSION['username']; 
-    echo "</b></h4>  
+    <h4><i class='fa fa-user-circle' aria-hidden='true'></i> <b>"; echo $_SESSION['username']; echo "</b></h4>  
   </div>
    <div class='w3-col s6 w3-margin-top w3-left'>
-    <button onclick='w3_close()' class='w3-bar-item w3-large'><i class='fa fa-times fa-1x' aria-hidden='true'></i></button> 
+    <button id = 'close-button' class='w3-bar-item w3-large' onclick='toggleSideBarMobile()'><i class='fa fa-times fa-1x' aria-hidden='true'></i></button> 
   </div>
   <div class='w3-col s4 w3-margin-top w3-right'>
     <form action = '?' method = 'post'>
@@ -101,14 +101,14 @@ else {
   <a href='#' class='w3-bar-item w3-button'><b>About</b></a> 
   <a href='#' class='w3-bar-item w3-button'><b>Contact Us</b></a> 
   <div class='w3-dropdown-hover'>
-    <button class='w3-button w3-teal w3-round' style='width:30%'><i class='fa fa-user fa-1x' aria-hidden='true'></i> <b> "; echo $_SESSION['firstname']; 
-    echo "</b>
+    <button class='w3-button w3-teal w3-round' style='width:30%'><i class='fa fa-user fa-1x' aria-hidden='true'></i> <b>"; echo $_SESSION['firstname']; echo "</b>
       <i class='fa fa-caret-down'></i>
     </button>
     <div class='w3-dropdown-content w3-bar-block'>
       <a href='personal_info.php' class='w3-bar-item w3-button'>Account</a>
     </div>
-  </div> 
+  </div>  
+</div>
 </div>
 <!-- Sidebar end (Small Screens)-->
 
@@ -228,14 +228,14 @@ else {
 
 
 <!-- Sidebar start (Small Screens)-->
-<div class='w3-sidebar w3-bar-block w3-dark-grey w3-card-2 w3-animate-left w3-hide-large w3-small w3-mobile' style='display:none' id='mySidebar2'>
-<div class = 'w3-row'> 
+<div class = 'menu'>
+<div class='w3-sidebar w3-bar-block w3-dark-grey w3-card-2 w3-small w3-hide-large app-menu' id='mySidebar2'>
+  <div class = 'w3-row'> 
  <div class='w3-half w3-white w3-container'>
-    <h4><i class='fa fa-user-circle' aria-hidden='true'></i> <b>"; echo $_SESSION['username']; 
-    echo "</b></h4>  
+    <h4><i class='fa fa-user-circle' aria-hidden='true'></i> <b>"; echo $_SESSION['username']; echo "</b></h4>  
   </div>
    <div class='w3-col s6 w3-margin-top w3-left'>
-    <button onclick='w3_close()' class='w3-bar-item w3-large'><i class='fa fa-times fa-1x' aria-hidden='true'></i></button> 
+    <button id = 'close-button' class='w3-bar-item w3-large' onclick='toggleSideBarMobile()'><i class='fa fa-times fa-1x' aria-hidden='true'></i></button> 
   </div>
   <div class='w3-col s4 w3-margin-top w3-right'>
     <form action = '?' method = 'post'>
@@ -258,14 +258,14 @@ else {
   <a href='#' class='w3-bar-item w3-button'><b>About</b></a> 
   <a href='#' class='w3-bar-item w3-button'><b>Contact Us</b></a> 
   <div class='w3-dropdown-hover'>
-    <button class='w3-button w3-teal w3-round' style='width:30%'><i class='fa fa-user fa-1x' aria-hidden='true'></i> <b>";echo $_SESSION['firstname']; 
-    echo "</b>
+    <button class='w3-button w3-teal w3-round' style='width:30%'><i class='fa fa-user fa-1x' aria-hidden='true'></i> <b>"; echo $_SESSION['firstname']; echo "</b>
       <i class='fa fa-caret-down'></i>
     </button>
     <div class='w3-dropdown-content w3-bar-block'>
-      <a href='../personal_info.php' class='w3-bar-item w3-button'>Account</a>
+      <a href='personal_info.php' class='w3-bar-item w3-button'>Account</a>
     </div>
-  </div> 
+  </div>  
+</div>
 </div>
 <!-- Sidebar end (Small Screens)-->
 
@@ -333,6 +333,27 @@ function w3_close() {
   document.getElementById('mySidebar').style.display = 'none';
   document.getElementById('mySidebar2').style.display = 'none';
 }
+
+
+/***Function to open/close mobile sidebar ***/
+function toggleSideBarMobile() {
+	myMenu.classList.add('menu--animatable');	
+	if(!myMenu.classList.contains('menu--visible')) {		
+		myMenu.classList.add('menu--visible');
+	} else {
+		myMenu.classList.remove('menu--visible');		
+	}	
+}
+
+function OnTransitionEnd() {
+	myMenu.classList.remove('menu--animatable');
+}
+
+var myMenu = document.querySelector('.menu');
+var closeButton = document.getElementById('close-button');
+myMenu.addEventListener('transitionend', OnTransitionEnd, false);
+//closeButton.addEventListener('click', toggleClassMenu, false);
+/***Function to open/close mobile sidebar ***/
 
 function open_dropdown() {
     var x = document.getElementById('dropdown');
