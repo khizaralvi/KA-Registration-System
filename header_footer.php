@@ -116,7 +116,7 @@ else {
     <!-- Navbar start (small screens) -->
 <div class='w3-hide-medium w3-opacity w3-hover-opacity-off w3-hide-large' id='myNavbar'>
   <div class='w3-bar w3-black w3-center w3-hover-opacity-off w3-small'>
-  <button class='w3-bar-item w3-button w3-dark-grey w3-hover-grey'  onclick='w3_open()' style = 'width:25%'><b> <i class='fa fa-bars fa-2x' aria-hidden='true'></i> </b> </button> 
+  <button class='w3-bar-item w3-button w3-dark-grey w3-hover-grey' onclick='toggleSideBarMobile()' style = 'width:25%' id = 'navButton'><b> <i class='fa fa-bars fa-2x' aria-hidden='true'></i> </b> </button> 
     <a href='$home' class='w3-bar-item w3-button w3-hover-blue-grey' style = 'width:25%' >Home</a>
     <a href='schedule.php' class='w3-bar-item w3-button w3-hover-blue-grey' style = 'width:25%'>Master Schedule</a>
     <a href='catalog.php' class='w3-bar-item w3-button w3-hover-blue-grey' style = 'width:25%'>Master Catalog</a>
@@ -202,6 +202,7 @@ else {
                 </head>";
     
     echo "</span><body class=$body_color>
+
         <!-- Sidebar start (Large Screens) -->
 <div class='w3-sidebar w3-bar-block w3-dark-grey w3-card-2 w3-animate-left w3-hide-small w3-mobile' style='display:none' id='mySidebar'>
 <div class='w3-container w3-white'>
@@ -262,7 +263,7 @@ else {
       <i class='fa fa-caret-down'></i>
     </button>
     <div class='w3-dropdown-content w3-bar-block'>
-      <a href='personal_info.php' class='w3-bar-item w3-button'>Account</a>
+      <a href='../personal_info.php' class='w3-bar-item w3-button'>Account</a>
     </div>
   </div>  
 </div>
@@ -273,7 +274,7 @@ else {
     <!-- Navbar start (small screens) -->
 <div class='w3-hide-medium w3-opacity w3-hover-opacity-off w3-hide-large' id='myNavbar'>
   <div class='w3-bar w3-black w3-center w3-hover-opacity-off w3-small'>
-  <button class='w3-bar-item w3-button w3-dark-grey w3-hover-grey'  onclick='w3_open()' style = 'width:25%'><b> <i class='fa fa-bars fa-2x' aria-hidden='true'></i> </b> </button> 
+  <button class='w3-bar-item w3-button w3-dark-grey w3-hover-grey' onclick='toggleSideBarMobile()' style = 'width:25%' id = 'navButton'><b> <i class='fa fa-bars fa-2x' aria-hidden='true'></i> </b> </button> 
     <a href='$home' class='w3-bar-item w3-button w3-hover-blue-grey' style = 'width:25%' >Home</a>
     <a href='../schedule.php' class='w3-bar-item w3-button w3-hover-blue-grey' style = 'width:25%'>Master Schedule</a>
     <a href='../catalog.php' class='w3-bar-item w3-button w3-hover-blue-grey' style = 'width:25%'>Master Catalog</a>
@@ -319,19 +320,15 @@ else {
 
 
 function htmlfooter(){
-Echo "
-<script>
+Echo "<script>
 function w3_open() {
   document.getElementById('main').style.marginLeft = '18%';
   document.getElementById('mySidebar').style.width = '18%';
   document.getElementById('mySidebar').style.display = 'block';
-  document.getElementById('mySidebar2').style.width = '15%';
-  document.getElementById('mySidebar2').style.display = 'block';
 }
 function w3_close() {
   document.getElementById('main').style.marginLeft = '0%';
   document.getElementById('mySidebar').style.display = 'none';
-  document.getElementById('mySidebar2').style.display = 'none';
 }
 
 

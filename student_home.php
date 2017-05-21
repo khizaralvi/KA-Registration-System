@@ -21,7 +21,7 @@ if (isset($_POST['signout'])) {
             <html>
                 <head>
                     <title>BJK Registration</title>
-                    <meta name='viewport' content='width=device-width, initial-scale=1'>
+                    <meta name='viewport' content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no'>
 		<link rel='stylesheet' href='https://www.w3schools.com/lib/w3.css'>
     <link rel='stylesheet' href='css/styles.css'>
     <link rel='stylesheet' href='https://www.w3schools.com/lib/w3-colors-signal.css'>
@@ -181,7 +181,7 @@ if (isset($_POST['signout'])) {
 
 
     <!-- Background Image -->
-<div class="w3-display-container w3-center w3-wide image w3-grayscale-min">
+<!--<div class="w3-display-container w3-center w3-wide image w3-grayscale-min">
   <div class="w3-display-bottommiddle w3-text-white w3-center w3-hide-small w3-hide-medium" style = "margin-bottom:40px">
   <h2 class = "w3-xxxlarge">BKJ Registration System</h2>
   <h2 class="w3-xxxlarge">Gupta University</h2>
@@ -190,12 +190,36 @@ if (isset($_POST['signout'])) {
     <h2 class="w3-xxlarge w3-hide-large">BKJ Registration System</h2>
     <h2 class="w3-xxlarge w3-hide-large">Gupta University</h2>
   </div>
+</div> -->
+
+<!-- Header -->
+  <header class="w3-container w3-center w3-padding-16 w3-white w3-hide-small">
+    <h1 class="w3-xxxlarge"><b>Fortune University</b></h1>
+    <h6>Welcome to <span class="w3-tag">KA Registration System</span></h6>
+  </header>
+
+<div class="w3-display-container w3-center w3-wide w3-hide-small image w3-grayscale-min">
+  <div class="w3-display-bottommiddle w3-text-white w3-center w3-hide-small w3-hide-medium" style = "margin-bottom:40px">
+  <!--<h2 class = "w3-xxxlarge">BKJ Registration System</h2>
+  <h2 class="w3-xxxlarge">Gupta University</h2>-->
+ </div>
+</div>
+
+<!-- Header -->
+  <header class="w3-container w3-center w3-padding w3-white w3-hide-large">
+    <h1 class="w3-xxxlarge"><b>Fortune University</b></h1>
+    <h6>Welcome to <span class="w3-tag">KA Registration System</span></h6>
+  </header>
+
+<div class="w3-display-container w3-center w3-wide w3-hide-large image-small w3-grayscale-min">
+ <div class="w3-display-bottommiddle w3-text-white w3-center w3-hide-large" style = "margin-bottom:10px">
+  </div>
 </div>
 
 
     <!-- Cards start -->
    <!-- <div class="w3-row-padding w3-margin-top w3-animate-right w3-card-4 w3-light-grey" style = "color:black"> -->
-        <div class="w3-row-padding w3-margin-top w3-margin-top" style = "color:black"> 
+        <div class="w3-row-padding w3-margin-top w3-margin-top" style = "color:black; overflow-x: hidden"> 
         <!-- Start Card -->
         <a class="w3-quarter" style="text-decoration: none;" href="academics/academics.php">
           <div class="w3-center w3-hover-blue-grey icons">
@@ -242,7 +266,6 @@ if (isset($_POST['signout'])) {
         <!-- End Card -->
     </div>
     <!-- End of Icon buttons -->
-
 </div>
 
 

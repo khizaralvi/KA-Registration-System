@@ -21,7 +21,7 @@ htmlheader_root();
 ?>
 
     <!-- Cards start -->
-    <div class="w3-row-padding w3-margin-top w3-animate-right" style = "color:black">
+    <div class="w3-row-padding w3-margin-top" style = "color:black; overflow-x: hidden">
         <!-- Start Card -->
         <a class="w3-quarter" style="text-decoration: none;" href="grades.php">
           <div class="w3-center w3-hover-blue-grey icons">

@@ -55,10 +55,10 @@ $sql = "SELECT enrollment.student_id, enrollment.crn, enrollment.enroll_date, co
             INNER JOIN semester ON section.semester_id = semester.semester_id
             LEFT OUTER JOIN teaching ON section.crn = teaching.crn
             LEFT OUTER JOIN user ON teaching.faculty_id = user.user_id
-            LEFT OUTER JOIN transcript on enrollment.crn = transcript.crn
+            LEFT OUTER JOIN transcript on enrollment.crn = transcript.crn AND transcript.student_id =" . $_SESSION['account'] . "
             WHERE enrollment.student_id = " . $_SESSION['account'] .
             " AND semester.semester_id = (SELECT MAX(semester.semester_id) FROM semester INNER JOIN section ON section.semester_id = semester.semester_id INNER JOIN
-              enrollment ON enrollment.crn = section.crn)";
+              enrollment ON enrollment.crn = section.crn WHERE enrollment.student_id =" . $_SESSION['account'] . ")";
 
 
 if ($result = mysqli_query($conn, $sql)) {

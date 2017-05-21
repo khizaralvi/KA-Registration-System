@@ -18,6 +18,27 @@
   background-attachment:scroll;
   }
 
+
+  .image-small {
+   
+   /** position:absolute; 
+    max-height: 200%;
+    min-height: 200%; 
+    background-size: 100% 100%;**/
+    min-height: 100%;
+    background-position: 30% 40%;
+    background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    height: 350px;
+    width:100%;
+}
+.image-small {
+  background-image:url('../img/college2.jpg');
+  background-attachment:scroll;
+  }
+
  /* @media only screen //For Iphones
 and (min-device-width : 375px) 
 and (max-device-width : 667px) { 
@@ -27,6 +48,7 @@ and (max-device-width : 667px) {
     width:100%;
  }
 }*/
+
 
 /*Css for opening mobile sidebar*/
 .menu--visible {
@@ -58,14 +80,31 @@ and (max-device-width : 667px) {
 }
 
 
-/*Css for animating menu icons on load*/
+/*Css for animating menu icons on load (SMARTPHONES)*/
+  @media only screen 
+and (max-device-width : 700px) { 
+
 @keyframes slideInFromLeft {
   0% {
-    transform: translateX(90%);
+    transform: translateX(300px);
   }
   100% {
     transform: translateX(0);
   }
+}
+}
+
+/*Css for animating menu icons on load (LAPTOPS & DESKTOPS)*/
+  @media only screen 
+and (min-device-width : 1300px) { 
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(40%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 }
 
 .icons {
@@ -73,6 +112,7 @@ and (max-device-width : 667px) {
       -webkit-animation: 0.3s ease-out 0s 1 slideInFromLeft;
       -moz-animation: 0.3s ease-out 0s 1 slideInFromLeft;
       -ms-animation: 0.3s ease-out 0s 1 slideInFromLeft;
+      max-width:100%;
 }
 
 

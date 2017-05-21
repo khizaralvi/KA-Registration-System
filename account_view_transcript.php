@@ -187,7 +187,8 @@ foreach ($semesters as $semester) {
  $sql = "SELECT DISTINCT(semester.sem_name), section.semester_id from enrollment
  INNER JOIN section ON enrollment.crn = section.crn
  INNER JOIN semester ON section.semester_id = semester.semester_id
- where section.semester_id  > (SELECT max(transcript.semester_id) FROM transcript) OR section.semester_id NOT IN (SELECT transcript.semester_id FROM transcript)
+ where (section.semester_id  > (SELECT max(transcript.semester_id) FROM transcript WHERE transcript.student_id =" . $_SESSION['account'] . " ) 
+ OR section.semester_id NOT IN (SELECT transcript.semester_id FROM transcript WHERE transcript.student_id =" . $_SESSION['account'] . "))
  AND enrollment.student_id = " . $_SESSION['account'] .
  " ORDER BY section.semester_id";
 
