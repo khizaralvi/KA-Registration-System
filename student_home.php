@@ -95,7 +95,7 @@ if (isset($_POST['signout'])) {
 </div>-->
 <!-- Sidebar start (Small Screens)-->
 <div class = "menu">
-<div class='w3-sidebar w3-bar-block w3-dark-grey w3-card-2 w3-small w3-hide-large app-menu' id='mySidebar2'>
+<div class='w3-sidebar w3-bar-block w3-dark-grey w3-card-2 w3-medium w3-hide-large app-menu' id='mySidebar2'>
   <div class = 'w3-row'> 
  <div class='w3-half w3-white w3-container'>
     <h4><i class='fa fa-user-circle' aria-hidden='true'></i> <b><?php echo $_SESSION['username'];?></b></h4>  
@@ -124,7 +124,7 @@ if (isset($_POST['signout'])) {
   <a href='#' class='w3-bar-item w3-button'><b>About</b></a> 
   <a href='#' class='w3-bar-item w3-button'><b>Contact Us</b></a> 
   <div class='w3-dropdown-hover'>
-    <button class='w3-button w3-teal w3-round' style='width:30%'><i class='fa fa-user fa-1x' aria-hidden='true'></i> <b> <?php echo $_SESSION['firstname'];?></b>
+    <button class='w3-button w3-teal w3-round' style='width:35%'><i class='fa fa-user fa-1x' aria-hidden='true'></i> <b> <?php echo $_SESSION['firstname'];?></b>
       <i class='fa fa-caret-down'></i>
     </button>
     <div class='w3-dropdown-content w3-bar-block'>

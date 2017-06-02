@@ -53,7 +53,7 @@ $sql = " SELECT transcript.crn, course.course_name, transcript.semester_id, seme
               INNER JOIN section ON transcript.crn = section.crn
               INNER JOIN course ON section.course_id = course.course_id
               INNER JOIN semester ON transcript.semester_id = semester.semester_id
-              WHERE semester.semester_id = (SELECT MAX(transcript.semester_id) FROM transcript)
+              WHERE semester.semester_id = (SELECT MAX(transcript.semester_id) FROM transcript WHERE transcript.student_id =" . $_SESSION['account'] . ")
               AND transcript.student_id = " . $_SESSION['account'];
 
 $termEarnedCredits = 0;
